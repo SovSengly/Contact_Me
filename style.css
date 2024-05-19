@@ -10,13 +10,13 @@
   font-family: Kh Ang MoulHand;
   src: url(fonts/Kh\ Ang\ MuraHand.ttf);
 }
-body{
+/* body{
   background: fixed;
   background-color: #000;
-/*   background-image: url(imgs/bg.jpg);
+  background-image: url(imgs/bg.jpg);
   background-position: center;
-  background-size: cover; */
-}
+  background-size: cover;
+} */
 .contact {
   position: relative;
   min-height: 100vh;
@@ -25,7 +25,7 @@ body{
   justify-content: center;
   align-items: center;
   flex-direction: column;
-  /* background: #000; */
+  background: #000;
 }
 .contact .content {
   max-width: 800px;
@@ -183,9 +183,9 @@ body{
 
 /* lets make it responsive */
 @media (max-width: 600px) {
-  body{
-/*     background-image: url(imgs/phonebg.jpg); */
-  }
+  /* body{
+    background-image: url(imgs/phonebg.jpg);
+  } */
   .contact {
     padding: 50px;
   }
