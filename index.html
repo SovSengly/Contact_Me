@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Responsive Contact us Page</title>
+    <link rel="stylesheet" type="text/css" href="style.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+  </head>
+  <body>
+    <section class="contact">
+      <div class="content">
+        <h2>សូមទាក់ទងមកខ្ញុំ</h2>
+        <p>
+        
+          ទាក់ទងមកខ្ញុំដើម្បីពិភាក្សាពីរបៀបដែលយើងអាចធ្វើការជាមួយគ្នាដើម្បីសម្រេចបាននូវគោលដៅរបស់អ្នក។ 
+          មិនថាអ្នកមានសំណួរ ត្រូវការព័ត៌មានបន្ថែម ឬត្រៀមខ្លួនរួចជាស្រេចក្នុងការចាប់ផ្តើមគម្រោងទេ
+          ខ្ញុំនៅទីនេះដើម្បីជួយ។ ទាក់ទងតាមរយៈទូរស័ព្ទ អ៊ីមែល ឬទម្រង់ទំនាក់ទំនង នៅលើទំព័រនេះ ហើយខ្ញុំនឹងឆ្លើយតបភ្លាមៗ។
+        </p>
+      </div>
+      <div class="container">
+        <div class="contactInfo">
+          <div class="box">
+            <div class="icon">
+              <ion-icon name="person"></ion-icon>
+            </div>
+            <div class="text">
+              <h3>អ្នកគ្រប់គ្រង</h3>
+              <p>
+                សូវ សេងលី
+              </p>
+            </div>
+          </div>
+          <div class="box">
+            <div class="icon">
+              <ion-icon name="location-outline"></ion-icon>
+            </div>
+            <div class="text">
+              <h3>អាស័យដ្ឋាន</h3>
+              <p>
+                ភូមិវិហារចិន, ឃុំស្វាយដង្គុំ, ខេត្តសៀមរាប, <br> ប្រទេសកម្ពុជា
+              </p>
+            </div>
+          </div>
+          <div class="box">
+            <div class="icon"><ion-icon name="call-outline"></ion-icon></div>
+            <div class="text">
+              <h3>លេខទូរស័ព្ទ</h3>
+              <p>096 42 42 177</p>
+            </div>
+          </div>
+          <div class="box">
+            <div class="icon"><ion-icon name="mail-outline"></ion-icon></div>
+            <div class="text">
+              <h3>អ៊ីមែល</h3>
+              <p>sovsengly77@gmail.com</p>
+            </div>
+          </div>
+         
+         <h2 class="txt">តភ្ជាប់ទំនាក់ទំនងជាមួយខ្ញុំតាមរយៈ</h2>
+          <ul class="sci">
+            <li>
+              <a href="https://www.facebook.com/SengLy6?mibextid=ZbWKwL" target="_blank"><i class="fa-brands fa-facebook"></i></a>
+            </li>
+            <li>
+              <a href="https://t.me/Sov_Sengly" target="_blank"><i class="fa-brands fa-telegram"></i></a>
+            </li>
+            <li>
+              <a href="https://tiktok.com/@sengly.dev" target="_blank"><i class="fa-brands fa-tiktok"></i></a>
+            </li>
+            <li>
+              <a href="mailto: sovsengly77@gmail.com" target="_blank"><i class="fa-solid fa-envelope"></i></a>
+            </li>
+            <li>
+              <a href="https://github.com/SovSengly" target="_blank"><i class="fa-brands fa-github"></i></a>
+            </li>
+          </ul>
+        </div>
+
+        <div class="contactForm">
+          <form name="submit-to-google-sheet">
+            <h2>ផ្ញើ​សារ</h2>
+            <div class="inputBox">
+              <input type="text" name="Name" required="required" />
+              <span>នាមត្រកូល​/នាមខ្លួន</span>
+            </div>
+            <div class="inputBox">
+              <input type="text" name="email" required="required" />
+              <span>អ៊ីមែល</span>
+            </div>
+            <div class="inputBox">
+              <textarea name="Message" required="required"></textarea>
+              <span>សរសេរពីសាររបស់អ្នក...</span>
+            </div>
+            <div class="inputBox">
+              <input type="submit" value="ផ្ញើ" />
+            </div>
+          </form>
+          <span id="msg"></span>
+        </div>
+      </div>
+    </section>
+    <script
+      type="module"
+      src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"
+    ></script>
+    <script
+      nomodule
+      src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"
+    ></script>
+
+    <script>
+      const scriptURL = 'https://script.google.com/macros/s/AKfycbzdAKSfgqdA30LQxenT2Nm0xSWeleBb-34pKOMw2Vr4F2ontPxzN8SIuio0WLM-aILO/exec'
+      const form = document.forms['submit-to-google-sheet']
+      const msg = document.getElementById("msg")
+    
+      form.addEventListener('submit', e => {
+        e.preventDefault()
+        fetch(scriptURL, { method: 'POST', body: new FormData(form)})
+          .then(response =>{
+              msg.innerHTML = "សាររបស់អ្នកត្រូវបានផ្ញើដោយជោគជ័យ"
+              setTimeout(function(){
+                  msg.innerHTML = ""
+              },5000)
+              form.reset()
+          })
+          .catch(error => console.error('Error!', error.message))
+      })
+    </script>
+  </body>
+</html>
