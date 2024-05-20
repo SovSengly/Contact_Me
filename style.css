@@ -189,7 +189,7 @@ body{
     background-image: url(imgs/phonebg.jpg);
   }
   .contact {
-    padding: 30px;
+    padding: 15px;
   }
   .container {
     flex-direction: column;
