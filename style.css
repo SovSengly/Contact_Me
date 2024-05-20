@@ -10,13 +10,13 @@
   font-family: Kh Ang MoulHand;
   src: url(fonts/Kh\ Ang\ MuraHand.ttf);
 }
-/* body{
+body{
   background: fixed;
   background-color: #000;
   background-image: url(imgs/bg.jpg);
   background-position: center;
   background-size: cover;
-} */
+}
 .contact {
   position: relative;
   min-height: 100vh;
@@ -106,7 +106,7 @@
 }
 .sci li a {
   color: #fff;
-  font-size: 3em;
+  font-size: 2em;
   transition: 0.5s;
 }
 .sci li a:hover {
@@ -183,9 +183,9 @@
 
 /* lets make it responsive */
 @media (max-width: 600px) {
-  /* body{
+  body{
     background-image: url(imgs/phonebg.jpg);
-  } */
+  }
   .contact {
     padding: 30px;
   }
