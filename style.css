@@ -25,7 +25,7 @@ body{
   justify-content: center;
   align-items: center;
   flex-direction: column;
-  background: #000;
+/*   background: #000; */
 }
 .contact .content {
   max-width: 800px;
@@ -88,7 +88,7 @@ body{
 }
 .container .contactInfo .txt {
   color: #fff;
-  font-size: 30px;
+  font-size: 20px;
   margin-top: 30px;
   font-weight: 500;
   padding-left: 10px;
@@ -176,7 +176,7 @@ body{
 
 #msg{
   color: #61b752;
-  margin-top: 40px;
+  margin-top: 10px;
   display: block;
       
 }
